@@ -10,6 +10,9 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+
+  display: flex;
+  justify-content: center;
 }
 
 #search-box {
@@ -17,4 +20,6 @@ body {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+
+  border-radius: 30px;
 }
