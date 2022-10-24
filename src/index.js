@@ -38,8 +38,12 @@ function createMarkup(allCountries) {
       .map(country => {
         const { flags, name } = country;
 
-        return `<li class='country-list__card'><img src="${flags.svg}" alt="Hello" width='30' class='country-list__img'> 
-                <p class='country-list__desc'>${name.official}</p></li>`;
+        return `<li class='country-list__card'>
+                  <div class="img-wrap">
+                    <img src="${flags.svg}" alt="Hello" class='country-list__img'>
+                  </div>
+                  <p class='country-list__desc'>${name.official}</p>
+                </li>`;
       })
       .join('');
   } else {
