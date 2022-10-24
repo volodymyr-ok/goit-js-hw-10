@@ -7,12 +7,11 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
-  color: #212121;
+  /* background-color: #fafafa; */
+  background-color: #2a3e54;
+  color: #fafafa;
+  /* color: #212121; */
   line-height: 1.5;
-
-  display: flex;
-  justify-content: center;
 }
 
 #search-box {
@@ -21,5 +20,71 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 
-  border-radius: 30px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+
+  border-radius: 10px;
+  border: 2px solid rgb(147, 147, 146);
+
+  transition-property: width;
+  transition-duration: 250ms;
+  transition-timing-function: linear;
 }
+
+#search-box:focus {
+  border: 2px solid rgb(20, 165, 165);
+  outline: none;
+  /* transform: rotate(180deg); */
+  /* transform: rotate(360deg); */
+  max-width: 900px;
+}
+
+.country-list {
+  max-width: 90%;
+  list-style: none;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  /* flex-basis: calc((100% - 60px) / 2); */
+  /* column-gap: 1000px; */
+}
+
+.country-list__card {
+  display: flex;
+  gap: 30px;
+  width: 300px;
+  /* margin-left: 250px;
+  margin-right: 250px; */
+  border: 1px dotted white;
+}
+
+.country-list__img {
+  display: block;
+  width: 100px;
+  /* height: auto; */
+}
+
+.country-list__desc {
+  font-size: large;
+}
+
+/* .country-info {
+}
+
+.country-info__img {
+}
+
+.country-info__name {
+}
+
+.country-info__cap {
+}
+
+.country-info__pop {
+}
+
+.country-info__lan {
+} */

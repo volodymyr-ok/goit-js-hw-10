@@ -34,8 +34,8 @@ function createMarkup(allCountries) {
       .map(country => {
         const { flags, name } = country;
 
-        return `<img src="${flags.svg}" alt="Hello" width='50' class='short-info__img'> 
-                <p class='short-info__desc'>${name.official}</p>`;
+        return `<li class='country-list__card'><img src="${flags.svg}" alt="Hello" width='50' class='country-list__img'> 
+                <p class='country-list__desc'>${name.official}</p></li>`;
       })
       .join('');
   } else {
@@ -63,11 +63,11 @@ function createMarkup(allCountries) {
         }
 
         return `
-                <img src="${flags.svg}" alt="Hello" width='200' class='full-info__img'> 
-                <h2 class='full-info__name'>${name.official}</h2>
-                <p class='full-info__cap'>Capital: ${capital}</p>
-                <p class='full-info__pop'>Population: ${population}</p>
-                <p class='full-info__lan'>Languages: ${language}</p>
+                <img src="${flags.svg}" alt="Hello" width='200' class='country-info__img'> 
+                <h2 class='country-info__name'>${name.official}</h2>
+                <p class='country-info__cap'>Capital: ${capital}</p>
+                <p class='country-info__pop'>Population: ${population}</p>
+                <p class='country-info__lan'>Languages: ${language}</p>
                 `;
       })
       .join('');
