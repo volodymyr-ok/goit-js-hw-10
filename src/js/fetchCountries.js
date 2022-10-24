@@ -8,6 +8,7 @@ export const fetchCountries = entrie => {
       if (!response.ok) {
         throw new Error();
       }
+      console.log(response);
       return response.json();
     })
     .catch(error => {

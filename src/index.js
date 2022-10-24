@@ -11,13 +11,17 @@ const countryInfo = document.querySelector('.country-info');
 
 input.addEventListener('input', debounce(actionOnInput, DEBOUNCE_DELAY));
 
-function actionOnInput() {
-  if (input.value.trim().length > 0) {
-    fetchCountries(input.value.trim())
+function actionOnInput(event) {
+  console.log('hello');
+  let inputValue = event.target.value.trim();
+
+  if (inputValue.length > 0) {
+    fetchCountries(inputValue)
       .then(data => createMarkup(data))
       .catch(console.log);
   } else {
     countryList.innerHTML = '';
+    countryInfo.innerHTML = '';
   }
 }
 
@@ -34,7 +38,7 @@ function createMarkup(allCountries) {
       .map(country => {
         const { flags, name } = country;
 
-        return `<li class='country-list__card'><img src="${flags.svg}" alt="Hello" width='50' class='country-list__img'> 
+        return `<li class='country-list__card'><img src="${flags.svg}" alt="Hello" width='30' class='country-list__img'> 
                 <p class='country-list__desc'>${name.official}</p></li>`;
       })
       .join('');
@@ -72,4 +76,12 @@ function createMarkup(allCountries) {
       })
       .join('');
   }
+}
+
+countryList.addEventListener('click', onCountryClick);
+
+function onCountryClick(event) {
+  fetchCountries(event.target.textContent.trim())
+    .then(data => createMarkup(data))
+    .catch(console.log);
 }
